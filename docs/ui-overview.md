@@ -1,6 +1,10 @@
 # UI Overview
 
+#### CLI push
+
 ![](../assets/images/studio-overview.png)
+
+![](../assets/images/frog.png)
 
 1. **Project Actions:** Contains actions to help you add new assets to your project, such as APIs, models, articles, etc.
 2. **Project Trees:** The project sidebar tree tabs provide different views into your project. Switch between a view of API related assets, docs, and all of the files/folders in your project.
