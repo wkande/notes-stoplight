@@ -1,9 +1,5 @@
 # Intro
 
-```
-npx @stoplight/cli@4 push --ci-token 9fc75900-545c-4fe9-9865-bc6f497ff6dd --url https://froglogz.stoplight.io
-```
-
 Studio is our next generation app for API design, modeling, and technical writing. 
 
 > A primary goal of Studio is to enrich, not replace, your existing workflows. It works offline, with folders and files on your computer, just like your favorite IDEs.
