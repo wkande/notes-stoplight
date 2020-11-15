@@ -1,0 +1,66 @@
+{
+  "items": [
+    {
+      "type": "item",
+      "title": "Introduction",
+      "uri": "docs/introduction.md"
+    },
+    {
+      "type": "item",
+      "title": "Chat With Us",
+      "uri": "docs/chat.md"
+    },
+    {
+      "type": "divider",
+      "title": "API Reference"
+    },
+    {
+      "type": "item",
+      "title": "Authentication",
+      "uri": "docs/auth.md"
+    },
+    {
+      "type": "group",
+      "title": "Users",
+      "items": [
+        {
+          "type": "item",
+          "title": "Create a Code",
+          "uri": "reference/todos/openapi.v1.yaml/paths/~1user~1code/post"
+        },
+        {
+          "type": "item",
+          "title": "Get a Token",
+          "uri": "reference/petstore/openapi.v1.yaml/paths/~1pets/post"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Pets",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get user's Pets",
+          "uri": "reference/petstore/openapi.v1.yaml/paths/~1pets/get"
+        },
+        {
+          "type": "item",
+          "title": "Create a Pet",
+          "uri": "reference/petstore/openapi.v1.yaml/paths/~1pets/post"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Models",
+      "items": [
+        {
+          "type": "item",
+          "title": "Pet",
+          "uri": "reference/petstore/models/pet.v1.yaml"
+        }
+      ]
+    }
+  ]
+}
