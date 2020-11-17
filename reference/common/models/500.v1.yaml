@@ -1,0 +1,18 @@
+title: 500
+type: object
+description: Internal Server Error
+content:
+  application/json:
+    example:
+      message: "Issue with database connection, timeout."
+      ip: "287.12.36.55"
+    schema:
+      $ref: './error.v1.yaml'
+  application/xml:
+    example: |
+      <error>
+        <message>string</item>
+        <ip>string</item>
+      </error>
+    schema:
+      $ref: './error.v1.yaml'

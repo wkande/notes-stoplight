@@ -1,0 +1,50 @@
+summary: Get a Token
+description: "Send the code received from **POST /user/code** to **GET /user/token**. The JWT token returned by GET /user/token is used to access other endpoints."
+operationId: get-token
+tags:
+  - Users
+security: []
+parameters:
+  - name: email
+    in: query
+    description: The user's email address.
+    required: true
+    schema:
+      type: string
+  - name: code
+    in: query
+    description: The code sent to the user's email address.
+    required: true
+    schema:
+      type: string
+  - name: Accept
+    in: header
+    description: Use either application/json or application/xml.
+    required: false
+    schema:
+      type: string
+      default: application/json
+responses:
+  "200":
+    title: "200"
+    description: OK
+    type: object
+    content:
+      application/json:
+        example: 
+          token: "HDHJKS87DKKS_DJJS8_HWMZXH..."
+        schema:
+          description: JWT token used to access data loaded endpoints.
+
+          properties:
+            token:
+              type: string
+              description: Actual JWT token.
+  "400":
+    $ref: ../../common/models/400.v1.yaml
+  "429":
+    $ref: ../../common/models/429.v1.yaml
+  "500":
+    $ref: ../../common/models/500.v1.yaml
+  default:
+    $ref: ../../common/models/default.v1.yaml

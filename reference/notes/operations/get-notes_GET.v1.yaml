@@ -1,0 +1,96 @@
+summary: Get user's Notes
+description: |
+    Gets a list of all **Notes** associated with a user's email address. The email address in the JWT token is used to identify the user.
+
+    There is an optional search to filter the notes by content and tags. Optional pagination using skip 
+    and limit will determine the number of notes returned.
+
+    - /notes (all notes)
+    - /notes?skip=0&limit=25 (first 25 notes, 1-25)
+    - /notes?skip=25&limit=25 (notes 26-50)
+    - /notes?content=Madison (notes with Madison in the content)
+    - /notes?tags=Saturday%20Tuesday (notes with Saturday or Tuesday in the tags)
+    - /notes?content=Madison&skip=0&limit=25 (first 25 notes with Madison in the content)
+  
+operationId: get-notes
+tags:
+  - Notes
+security:
+  - BearerAuth: []
+parameters:
+  - name: Accept
+    in: header
+    description: Use either application/json or application/xml.
+    required: false
+    schema:
+      type: string
+      default: application/json
+  - name: content
+    in: query
+    description: Text to search within the note's content.
+    required: false
+    schema:
+      type: string
+      example: madison
+  - name: tags
+    in: query
+    description: Text to search within the note's tags.
+    required: false
+    schema:
+      type: string
+      example: saturday monday
+  - name: limit
+    in: query
+    description: Max number of rows.
+    required: false
+    schema:
+      type: integer
+      example: 25
+  - name: skip
+    in: query
+    description: Starting number for a limited set of rows.
+    required: false
+    schema:
+      type: integer
+      example: 25
+responses:
+  "200":
+    title: "200"
+    description: OK
+    type: object
+    content:
+      application/json:
+        example: 
+          [
+            {
+              "id": "-UB_Ja5Qq",
+              "email": "me@mydomain.com",
+              "content": "Sent a new token.",
+              "tags": "Monday",
+              "dttm": "2020-10-17T13:52:22.027Z"
+            },
+            {
+              "id": "AU7_Ja5Us",
+              "email": "me@mydomain.com",
+              "content": "My first note.",
+              "tags": "Monday",
+              "dttm": "2020-10-16T11:12:11.047Z"
+            }
+          ]
+        schema:
+          type: array
+          description: An array of Notes.
+          items:
+            $ref: ../models/note.v1.yaml
+  "400":
+    $ref: ../../common/models/400.v1.yaml
+  "401":
+    $ref: ../../common/models/401.v1.yaml
+  "403":
+    $ref: ../../common/models/403.v1.yaml
+  "429":
+    $ref: ../../common/models/429.v1.yaml
+  "500":
+    $ref: ../../common/models/500.v1.yaml
+  default:
+    $ref: ../../common/models/default.v1.yaml

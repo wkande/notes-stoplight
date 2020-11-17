@@ -1,0 +1,18 @@
+title: 401
+type: object
+description: Unauthorized
+content:
+  application/json:
+    example: 
+      message: "Login required"
+      ip: "287.12.36.55"
+    schema:
+      $ref: './error.v1.yaml'
+  application/xml:
+    example: |
+      <error>
+        <message>string</item>
+        <ip>string</item>
+      </error>
+    schema:
+      $ref: './error.v1.yaml'

@@ -1,0 +1,21 @@
+title: User
+description: User object.
+type: object
+example: 
+  email: me@mydomain.com
+  notes_cnt: 23
+properties:
+  user:
+    description: Contains information about the user.
+    type: object
+    required:
+      - email
+      - notes_cnt
+    properties:
+      email:
+        type: string
+        format: email=me@mydomain.com
+        description: Email address of the user
+      notes_cnt:
+        type: integer
+        description: Number of notes the user has in the database.

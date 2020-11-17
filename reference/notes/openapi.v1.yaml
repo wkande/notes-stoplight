@@ -1,0 +1,33 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Notes
+  license:
+    name: MIT
+  contact:
+    name: WyoSoft
+    url: 'https://github.com/wkande'
+  description: "Notes"
+servers:
+  - url: 'https://docs-as-code.herokuapp.com'
+    description: Heroku
+  - url: 'http:/localhost:3001'
+    description: Localhost
+tags:
+  - name: Notes
+    description: |
+      **Notes** have a simple structure focusing on content and tags. Each note belongs to one email address and has a unique id for DML actions.
+paths:
+  /notes:
+    get:
+      $ref: "./operations/get-notes_GET.v1.yaml"
+    delete:
+      $ref: "./operations/delete-notes_DELETE.v1.yaml"
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      example: Bearer JDHD766DJMDK-J0TWCVZHDL876...
+      description: "JWT token authorization."

@@ -1,0 +1,26 @@
+title: Code
+description: Code sent to user's email address.
+type: object
+example: 
+  email: me@mydomain.com
+  message: A code was sent to the email address.
+  ip: 122.23.45.12
+properties:
+  code:
+    description: Contains information about the code.
+    type: object
+    required:
+      - email
+      - message
+      - ip
+    properties:
+      email:
+        type: string
+        format: email=me@mydomain.com
+        description: Email address of the user
+      message:
+        type: string
+        description: Status of the code sent to the email address.
+      ip:
+        type: string
+        description: The closest ip address from the client making the request.

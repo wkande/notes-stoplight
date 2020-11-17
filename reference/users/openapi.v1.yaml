@@ -1,0 +1,37 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Users
+  license:
+    name: MIT
+  contact:
+    name: WyoSoft
+    url: 'https://github.com/wkande'
+  description: "Users"
+servers:
+  - url: 'https://docs-as-code.herokuapp.com'
+    description: Heroku
+  - url: 'http:/localhost:3001'
+    description: Localhost
+tags:
+  - name: Users
+    description: |
+      In Notes a **User** is synonymous with an email address. Nothing more is known about the user. Users must authenticate with their email address using the [**Email-Code-Token**](#section/Authentication) mechanism.
+paths:
+  /user/code:
+    post:
+      $ref: "./operations/create-code_post.v1.yaml"
+  /user/token:
+    get:
+      $ref: "./operations/get-token_get.v1.yaml"
+  /user:
+    get:
+      $ref: "./operations/get-user_get.v1.yaml"
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      example: Bearer JDHD766DJMDK-J0TWCVZHDL876...
+      description: "JWT token authorization."

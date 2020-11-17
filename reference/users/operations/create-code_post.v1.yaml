@@ -1,0 +1,54 @@
+summary: Create a Code
+description: "Creates an access code and sends it to the user's email address. Part of the **email-code-token** [mechanism](../../../../../docs/auth.md)."
+operationId: create-code
+tags:
+  - Users
+security: []
+parameters:
+  - name: Content-Type
+    in: header
+    description: Must send application/x-www-form-urlencoded.
+    required: true
+    schema:
+      type: string
+      default: application/x-www-form-urlencoded
+  - name: Accept
+    in: header
+    description: Use either application/json or application/xml.
+    required: false
+    schema:
+      type: string
+      default: application/json
+requestBody:
+  required: true
+  content:
+    application/x-www-form-urlencoded:
+      schema:
+        default: email=<email-address>
+        type: object
+        required:
+          [email]
+        properties:
+          email: 
+            type: string
+            format: email
+            description: Email address of the user, a code will be sent to the email address.
+      example:
+        email: "<email-address>"
+responses:
+  "201":
+    title: "201"
+    description: Created
+    type: object
+    content:
+      application/json:
+        schema:
+          $ref: ../models/code.v1.yaml
+  "400":
+    $ref: ../../common/models/400.v1.yaml
+  "429":
+    $ref: ../../common/models/429.v1.yaml
+  "500":
+    $ref: ../../common/models/500.v1.yaml
+  default:
+    $ref: ../../common/models/default.v1.yaml

@@ -1,0 +1,31 @@
+summary: Delete user's Notes
+description: Deletes all the **Notes** of the current user. The email address in the JWT token is used to identify the user.
+operationId: delete-notes
+tags:
+  - Notes
+security:
+  - BearerAuth: []
+parameters:
+  - name: Accept
+    in: header
+    description: Use either application/json or application/xml.
+    required: false
+    schema:
+      type: string
+      default: application/json
+responses:
+  "200":
+    title: "204"
+    description: No Content
+  "400":
+    $ref: ../../common/models/400.v1.yaml
+  "401":
+    $ref: ../../common/models/401.v1.yaml
+  "403":
+    $ref: ../../common/models/403.v1.yaml
+  "429":
+    $ref: ../../common/models/429.v1.yaml
+  "500":
+    $ref: ../../common/models/500.v1.yaml
+  default:
+    $ref: ../../common/models/default.v1.yaml
