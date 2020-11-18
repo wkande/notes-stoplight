@@ -6,6 +6,16 @@
       "uri": "docs/introduction.md"
     },
     {
+      "type": "item",
+      "title": "Heroku",
+      "uri": "docs/heroku.md"
+    },
+    {
+      "type": "item",
+      "title": "Insomnia",
+      "uri": "docs/insomnia.md"
+    },
+    {
       "type": "divider",
       "title": "API Reference"
     },
