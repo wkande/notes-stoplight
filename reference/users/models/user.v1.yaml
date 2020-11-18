@@ -1,9 +1,10 @@
 title: User
-description: User object.
+description:
 type: object
 example: 
-  email: me@mydomain.com
-  notes_cnt: 23
+  user:
+    email: me@mydomain.com
+    notes_cnt: 23
 properties:
   user:
     description: Contains information about the user.

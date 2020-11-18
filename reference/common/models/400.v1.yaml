@@ -3,9 +3,10 @@ type: object
 description: Bad Request
 content:
   application/json:
-    example: 
-      message: "Missing header value for Content-Type"
-      ip: "287.12.36.55"
+    example:
+      error:
+        message: "Missing header value for Content-Type"
+        ip: "287.12.36.55"
     schema:
       $ref: './error.v1.yaml'
   application/xml:

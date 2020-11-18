@@ -1,0 +1,75 @@
+summary: Update a Tag
+description: Updates a particular **Tag** within all notes belonging to the current user. Useful to correct misspelled tags. The old tag is passed in the path and the new tag spelling is passed in the body. The email address in the JWT token is used to identify the user.
+operationId: update-tag
+tags:
+  - Tags
+security:
+  - BearerAuth: []
+parameters:
+  - name: Content-Type
+    in: header
+    description: Must send application/x-www-form-urlencoded.
+    required: true
+    schema:
+      type: string
+      default: application/x-www-form-urlencoded
+  - name: Accept
+    in: header
+    description: Use either application/json or application/xml.
+    required: false
+    schema:
+      type: string
+      default: application/json
+  - name: tag
+    in: path
+    description: The tag spelling to replace.
+    required: true
+    schema:
+      type: string
+    example: Tueday
+requestBody:
+  required: true
+  content:
+    application/x-www-form-urlencoded:
+      schema:
+        default: tag=<value>
+        type: string
+        required: true
+        description: The new tag spelling to overwrite the old spelling.
+      example:
+        tag: Tuesday
+responses:
+  "200":
+    title: "200"
+    description: OK
+    type: object
+    content:
+      application/json:
+        schema:
+          type: object
+          description: Old and new tags.
+          items:
+            properties:
+              tag_old:
+                type: string
+                description: The tag replaced.
+              tag_new:
+                type: string
+                description: The tag replacement.
+        example: |
+          {
+            "tag_old": "Tueday",
+            "tag_new": "Tuesday"
+          }
+  "400":
+    $ref: ../../common/models/400.v1.yaml
+  "401":
+    $ref: ../../common/models/401.v1.yaml
+  "403":
+    $ref: ../../common/models/403.v1.yaml
+  "429":
+    $ref: ../../common/models/429.v1.yaml
+  "500":
+    $ref: ../../common/models/500.v1.yaml
+  default:
+    $ref: ../../common/models/default.v1.yaml

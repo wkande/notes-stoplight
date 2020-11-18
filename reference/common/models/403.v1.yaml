@@ -4,8 +4,9 @@ description: Forbidden
 content:
   application/json:
     example:
-      message: "Request was understood but was rejected."
-      ip: "287.12.36.55"
+      error:
+        message: "Request was understood but was rejected."
+        ip: "287.12.36.55"
     schema:
       $ref: './error.v1.yaml'
   application/xml:

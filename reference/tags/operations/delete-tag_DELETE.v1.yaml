@@ -1,8 +1,8 @@
-summary: Delete user's Notes
-description: Deletes all the **Notes** of the current user. The email address in the JWT token is used to identify the user.
-operationId: delete-notes
+summary: Delete a Tag
+desciption: Deletes a particular **Tag** from all notes belonging to the current user. The email address in the JWT token is used to identify the user.
+operationId: delete-tag
 tags:
-  - Notes
+  - Tags
 security:
   - BearerAuth: []
 parameters:
@@ -13,6 +13,13 @@ parameters:
     schema:
       type: string
       default: application/json
+  - name: tag
+    in: path
+    description: The tag to delete.
+    required: true
+    schema:
+      type: string
+    example: street
 responses:
   "204":
     title: "204"

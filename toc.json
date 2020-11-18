@@ -48,6 +48,53 @@
           "type": "item",
           "title": "Delete user's Notes",
           "uri": "reference/notes/openapi.v1.yaml/paths/~1notes/delete"
+        },
+        {
+          "type": "item",
+          "title": "Get a Note",
+          "uri": "reference/notes/openapi.v1.yaml/paths/~1note~1{id}/get"
+        },
+        {
+          "type": "item",
+          "title": "Create a Note",
+          "uri": "reference/notes/openapi.v1.yaml/paths/~1note/post"
+        },
+        {
+          "type": "item",
+          "title": "Update a Note",
+          "uri": "reference/notes/openapi.v1.yaml/paths/~1note~1{id}/put"
+        },
+        {
+          "type": "item",
+          "title": "Delete a Note",
+          "uri": "reference/notes/openapi.v1.yaml/paths/~1note~1{id}/delete"
+        }
+        ,
+        {
+          "type": "item",
+          "title": "Remove a note's Tags",
+          "uri": "reference/notes/openapi.v1.yaml/paths/~1note~1{id}~1tags/patch"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Tags",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get user's Tags",
+          "uri":"reference/tags/openapi.v1.yaml/paths/~1tags/get"
+        },
+        {
+          "type": "item",
+          "title": "Update a Tag",
+          "uri":"reference/tags/openapi.v1.yaml/paths/~1tag~1{tag}/put"
+        },
+        {
+          "type": "item",
+          "title": "Delete a Tag",
+          "uri":"reference/tags/openapi.v1.yaml/paths/~1tag~1{tag}/delete"
         }
       ]
     },
@@ -57,8 +104,28 @@
       "items": [
         {
           "type": "item",
-          "title": "Pet",
-          "uri": "reference/petstore/models/pet.v1.yaml"
+          "title": "Code",
+          "uri": "reference/users/models/code.v1.yaml"
+        },
+        {
+          "type": "item",
+          "title": "Token",
+          "uri": "reference/users/models/token.v1.yaml"
+        },
+        {
+          "type": "item",
+          "title": "User",
+          "uri": "reference/users/models/user.v1.yaml"
+        },
+        {
+          "type": "item",
+          "title": "Note",
+          "uri": "reference/notes/models/note.v1.yaml"
+        },
+        {
+          "type": "item",
+          "title": "Error",
+          "uri": "reference/common/models/error.v1.yaml"
         }
       ]
     }

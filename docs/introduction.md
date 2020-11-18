@@ -14,7 +14,7 @@ uses a loose collection of markdown files. As with docs-like-code practices, all
 
 The **wkande/notes** repository contains the API source code and documentation. 
 
-[![GitHub Search](../images/github-notes.png)](https://github.com/wkande/notes)
+[![GitHub Search](../assets/images/github-notes.png)](https://github.com/wkande/notes)
 
 Within the notes repository is the source for all three documentation sets using three different vendors.
 

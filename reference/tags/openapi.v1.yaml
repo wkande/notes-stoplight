@@ -1,0 +1,36 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Tags
+  license:
+    name: MIT
+  contact:
+    name: WyoSoft
+    url: 'https://github.com/wkande'
+  description: "Tags"
+servers:
+  - url: 'https://docs-as-code.herokuapp.com'
+    description: Heroku
+  - url: 'http:/localhost:3001'
+    description: Localhost
+tags:
+  - name: Tags
+    description: |
+      **Tags** are embedded in notes to aid in searching. A note can have one or many tags. Tags are stored in the note as a string of words.
+paths:
+  /tags:
+    get:
+      $ref: "./operations/get-tags_GET.v1.yaml"
+  /tag/{tag}:
+    put:
+      $ref: "./operations/update-tag_PUT.v1.yaml"
+    delete:
+      $ref: "./operations/delete-tag_DELETE.v1.yaml"
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      example: Bearer JDHD766DJMDK-J0TWCVZHDL876...
+      description: "JWT token authorization."

@@ -23,6 +23,19 @@ paths:
       $ref: "./operations/get-notes_GET.v1.yaml"
     delete:
       $ref: "./operations/delete-notes_DELETE.v1.yaml"
+  /note:
+    post:
+      $ref: "./operations/create-note_POST.v1.yaml"
+  /note/{id}:
+    get:
+      $ref: "./operations/get-note_GET.v1.yaml"
+    put:
+      $ref: "./operations/update-note_PUT.v1.yaml"
+    delete:
+      $ref: "./operations/delete-note_DELETE.v1.yaml"
+  /note/{id}/tags:
+    patch:
+      $ref: "./operations/remove-tags_PATCH.v1.yaml"
 components:
   securitySchemes:
     BearerAuth:

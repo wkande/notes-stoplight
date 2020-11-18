@@ -1,0 +1,62 @@
+summary: Create a Note
+description: Creates a new **Note** using the email address in the JWT token passed in the header.
+operationId: create-note
+tags:
+  - Notes
+security:
+  - BearerAuth: []
+parameters:
+  - name: Content-Type
+    in: header
+    description: Must send application/x-www-form-urlencoded.
+    required: true
+    schema:
+      type: string
+      default: application/x-www-form-urlencoded
+  - name: Accept
+    in: header
+    description: Use either application/json or application/xml.
+    required: false
+    schema:
+      type: string
+      default: application/json
+requestBody:
+  required: true
+  content:
+    application/x-www-form-urlencoded:
+      schema:
+        default: content=<content>&tags=<tags>
+        type: object
+        required:
+          [content, tags]
+        properties:
+          content: 
+            type: string
+            description: The main message for the note's content.
+          tags: 
+            type: string
+            description: Key words to aid in note searching.
+      example:
+        content: Pickup groceries on Monday.
+        tags: Monday groceries
+responses:
+  "201":
+    title: "201"
+    description: Created
+    type: object
+    content:
+      application/json:
+        schema:
+          $ref: ../models/note.v1.yaml
+  "400":
+    $ref: ../../common/models/400.v1.yaml
+  "401":
+    $ref: ../../common/models/401.v1.yaml
+  "403":
+    $ref: ../../common/models/403.v1.yaml
+  "429":
+    $ref: ../../common/models/429.v1.yaml
+  "500":
+    $ref: ../../common/models/500.v1.yaml
+  default:
+    $ref: ../../common/models/default.v1.yaml

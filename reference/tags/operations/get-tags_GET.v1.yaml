@@ -1,0 +1,52 @@
+summary: Get user's Tags
+description: Gets a list of unique **Tags** used within all notes belonging to the current user. The email address in the JWT token is used to identify the user.
+operationId: get-tags
+tags:
+  - Tags
+security:
+  - BearerAuth: []
+parameters:
+  - name: Accept
+    in: header
+    description: Use either application/json or application/xml.
+    required: false
+    schema:
+      type: string
+      default: application/json
+responses:
+  "200":
+    title: "200"
+    description: OK
+    type: object
+    content:
+      application/json:
+        example: 
+          {
+          "tags": [
+            "Monday",
+            "Cash",
+            "Node.js",
+            "Doc",
+            "Triumph"
+            ]
+          }
+        schema:
+          type: array
+          description: An array of strings.
+          items:
+            properties:
+            tag:
+              type: string
+              description: A unique tag from all notes.
+  "400":
+    $ref: ../../common/models/400.v1.yaml
+  "401":
+    $ref: ../../common/models/401.v1.yaml
+  "403":
+    $ref: ../../common/models/403.v1.yaml
+  "429":
+    $ref: ../../common/models/429.v1.yaml
+  "500":
+    $ref: ../../common/models/500.v1.yaml
+  default:
+    $ref: ../../common/models/default.v1.yaml

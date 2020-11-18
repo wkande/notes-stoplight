@@ -4,8 +4,9 @@ description: Internal Server Error
 content:
   application/json:
     example:
-      message: "Issue with database connection, timeout."
-      ip: "287.12.36.55"
+      error:
+        message: "Issue with database connection, timeout."
+        ip: "287.12.36.55"
     schema:
       $ref: './error.v1.yaml'
   application/xml:

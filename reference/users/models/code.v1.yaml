@@ -1,10 +1,11 @@
 title: Code
-description: Code sent to user's email address.
+description:
 type: object
-example: 
-  email: me@mydomain.com
-  message: A code was sent to the email address.
-  ip: 122.23.45.12
+example:
+  code:
+    email: me@mydomain.com
+    message: A code was sent to the email address.
+    ip: 122.23.45.12
 properties:
   code:
     description: Contains information about the code.

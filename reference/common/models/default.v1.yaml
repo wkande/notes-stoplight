@@ -4,8 +4,9 @@ description: unexpected error
 content:
   application/json:
     example:
-      message: "Function is not an object."
-      ip: "287.12.36.55"
+      error:
+        message: "Function is not an object."
+        ip: "287.12.36.55"
     schema:
       $ref: './error.v1.yaml'
   application/xml:

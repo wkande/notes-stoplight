@@ -3,9 +3,10 @@ type: object
 description: Unauthorized
 content:
   application/json:
-    example: 
-      message: "Login required"
-      ip: "287.12.36.55"
+    example:
+      error: 
+        message: "Login required"
+        ip: "287.12.36.55"
     schema:
       $ref: './error.v1.yaml'
   application/xml:

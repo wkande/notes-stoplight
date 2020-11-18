@@ -1,5 +1,5 @@
-summary: Delete user's Notes
-description: Deletes all the **Notes** of the current user. The email address in the JWT token is used to identify the user.
+summary: Delete a Note
+description: Deletes a **Note** using the note's id and the email address. The email address in the JWT token is used to identify the user.
 operationId: delete-notes
 tags:
   - Notes
@@ -13,6 +13,12 @@ parameters:
     schema:
       type: string
       default: application/json
+  - name: id
+    in: path
+    description: The ID of the note to delete.
+    required: true
+    schema:
+      type: string
 responses:
   "204":
     title: "204"

@@ -1,12 +1,17 @@
 title: Error
+description:
 type: object
-description: A standard error object. The message further describes the response code and status. The ip is the closest known address of the client.
 properties:
-  message:
-    type: string
-  ip:
-    type: string
-required:
-  - code
-x-tags:
-  - Common
+  error:
+    description: Contains information about the error.
+    type: object
+    required:
+      - message
+      - ip
+    properties:
+      message:
+        type: string
+        description: Information that may not be found in the response status.
+      ip:
+        type: string
+        description: Closest know IP address of the client.

@@ -1,0 +1,16 @@
+title: Token
+description:
+type: object
+example:
+  token:
+    value: eyJhbGciOiJIUzI1NiJ9.d2Fycm...
+properties:
+  token:
+    description: Contains the token's value.
+    type: object
+    required:
+      - value
+    properties:
+      value:
+        type: string
+        description: The token value.

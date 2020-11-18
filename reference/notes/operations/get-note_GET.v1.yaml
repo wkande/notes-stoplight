@@ -1,0 +1,50 @@
+summary: Get a Note
+description: Gets a single **Note**. The note, as identified by the note's id, must belong to the user. The email address in the JWT token is used to identify the user.
+operationId: get-note
+tags:
+  - Notes
+security:
+  - BearerAuth: []
+parameters:
+  - name: Accept
+    in: header
+    description: Use either application/json or application/xml.
+    required: false
+    schema:
+      type: string
+      default: application/json
+  - name: id
+    in: path
+    description: The ID of the note to get. Must belong to the current user.
+    required: true
+    schema:
+      type: string
+responses:
+  "200":
+    title: "200"
+    description: OK
+    type: object
+    content:
+      application/json:
+        schema:
+          $ref: ../models/note.v1.yaml
+# This example needs to be here, for some reason the example in the note model
+# does not get display like it does for create-a-note POST.
+        example: 
+          id: Czjsdh7HW
+          email: me@mydomain.com
+          content: Pickup hardware for broken window.
+          tags: Monday window
+          dttm: "2020-10-28T23:18:45.927Z"
+  "400":
+    $ref: ../../common/models/400.v1.yaml
+  "401":
+    $ref: ../../common/models/401.v1.yaml
+  "403":
+    $ref: ../../common/models/403.v1.yaml
+  "429":
+    $ref: ../../common/models/429.v1.yaml
+  "500":
+    $ref: ../../common/models/500.v1.yaml
+  default:
+    $ref: ../../common/models/default.v1.yaml
